@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://example.com/signup",
+    "detected_pattern_type": "Pre-checked Checkbox",
+    "html_snippet": "<input type=\"checkbox\" name=\"newsletter\" checked> Yes, sign me up for the newsletter",
+    "screenshot_path": "screenshots/example_screenshot.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://example-store.com/checkout",
+    "detected_pattern_type": "Confirmshaming",
+    "html_snippet": "<a href=\"/decline\">No thanks, I don't want to save money.</a>",
+    "screenshot_path": "screenshots/confirmshaming_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://travel-deals.com/booking",
+    "detected_pattern_type": "Fake Urgency",
+    "html_snippet": "<div class=\"timer\">Offer ends in: 10:00</div>",
+    "screenshot_path": "screenshots/fake_urgency_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://dark-patterns.com/subscribe",
+    "detected_pattern_type": "Visual Bias",
+    "html_snippet": "<button class='big-accept'>Accept All</button> <a href='/settings' style='font-size: 8px;'>Manage Settings</a>",
+    "screenshot_path": "screenshots/visual_bias_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://shop-site.com/cart",
+    "detected_pattern_type": "Sneak into Basket",
+    "html_snippet": "<div>Item: T-Shirt</div> <div>Item: Donation to Charity (auto-added)</div>",
+    "screenshot_path": "screenshots/sneak_into_basket_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://ticketing-service.com/checkout",
+    "detected_pattern_type": "Hidden Costs",
+    "html_snippet": "<span>Ticket Price: $50.00</span> ... <span class='fine-print'>+ $15 service fee</span>",
+    "screenshot_path": "screenshots/hidden_costs_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://subscription-box.com/account",
+    "detected_pattern_type": "Roach Motel",
+    "html_snippet": "<span>To cancel your account, please call customer service at 1-800-555-1234.</span>",
+    "screenshot_path": "screenshots/roach_motel_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://social-network.com/register",
+    "detected_pattern_type": "Forced Action",
+    "html_snippet": "<label><input type='checkbox' required> I agree to the terms and to receive marketing emails.</label>",
+    "screenshot_path": "screenshots/forced_action_example.png",
+    "ignored_by_user": false
+  },
+  {
+    "url": "https://fashion-outlet.com/",
+    "detected_pattern_type": "Confirmshaming",
+    "html_snippet": "<button>No, I hate looking good.</button>",
+    "screenshot_path": "screenshots/confirmshaming_example_2.png",
+    "ignored_by_user": false
+  }
+] 

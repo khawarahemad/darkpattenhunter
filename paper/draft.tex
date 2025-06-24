@@ -1,0 +1,93 @@
+\documentclass[journal]{IEEEtran}
+
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{cite}
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+
+\begin{document}
+
+\title{DarkPatternHunter: A Browser-Based Smart Detection and Visualization System for Deceptive UX Patterns}
+
+\author{Your Name(s) Here}
+
+% The paper headers
+\markboth{Journal of Dark Pattern Research,~Vol.~1, No.~1, Month~2025}%
+{Shell \MakeLowercase{\textit{et al.}}: A Sample Article Using IEEEtran.cls for IEEE Journals}
+
+% \IEEEpubid{0000--0000/00\$00.00~\copyright~2025 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+\maketitle
+
+\begin{abstract}
+This paper introduces DarkPatternHunter, a browser-based system for automatically detecting and visualizing deceptive user experience (UX) patterns, commonly known as dark patterns. We present a taxonomy of detectable patterns and detail a methodology combining DOM-based heuristics and rule-based analysis to identify them in real-time. The system warns users with non-intrusive, inline bubbles and collects data to build a comprehensive, labeled dataset of dark patterns. Our evaluation on 100+ live websites demonstrates the system's effectiveness, achieving X\% precision and Y\% recall. We discuss the ethical implications of dark patterns and conclude that tools like DarkPatternHunter are crucial for user empowerment, digital literacy, and regulatory compliance.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Dark Patterns, Deceptive Design, User Experience (UX), Browser Extension, Human-Computer Interaction (HCI), Online Manipulation, Consumer Protection.
+\end{IEEEkeywords}
+
+\section{Introduction}
+\IEEEPARstart{D}{ark} patterns are user interface design choices that benefit an online service by coercing, steering, or deceiving users into making unintended and potentially harmful decisions. These patterns are prevalent across e-commerce, social media, and subscription services, leading to issues such as unintended purchases, privacy erosion, and user frustration. The rise of dark patterns necessitates the development of automated tools to protect consumers. This paper introduces DarkPatternHunter, a browser extension designed to automatically detect and neutralize common dark patterns, thereby empowering users and fostering a more transparent digital environment.
+
+\section{Related Work}
+This section will review existing literature on dark pattern detection, browser-based intervention tools, and studies on user manipulation. Prior work, such as the studies from Princeton University, has established the prevalence of these patterns, but few tools exist for real-time, client-side intervention.
+
+\section{Pattern Taxonomy}
+We define a classification system for the dark patterns detected by our system. This taxonomy is based on the work of Gray et al. and others, adapted for automated detection.
+\begin{itemize}
+    \item \textbf{Pre-checked Checkboxes:} Opt-in consents that are checked by default, leveraging status quo bias to enroll users in services they might not want.
+    \item \textbf{Confirmshaming:} Using guilt-inducing or shaming language to make a user reconsider opting out of a service. For example, a link that reads ``No thanks, I like paying full price.''
+    \item \textbf{Fake Urgency/Scarcity:} Fabricating time limits or limited stock to pressure users into making impulsive decisions. This is often implemented with countdown timers that are not genuine.
+    \item \textbf{Visual Bias:} Creating a false hierarchy by making the preferred option much more prominent, while hiding or graying out the less-desirable option (e.g., a tiny ``opt-out'' button).
+\end{itemize}
+
+\section{System Architecture}
+An overview of the DarkPatternHunter browser extension, including its core components:
+\begin{itemize}
+    \item \textbf{Content Script:} The core of the extension, injected into every webpage. It performs the DOM scanning and analysis.
+    \item \textbf{UI Injection Engine:} Responsible for creating and displaying the inline warning bubbles and the top notification bar.
+    \item \textbf{Persistence Layer:} Uses the browser's `localStorage` to track user-ignored warnings, ensuring they are not shown again on subsequent visits.
+\end{itemize}
+
+\section{Detection Methodology}
+A detailed explanation of the detection algorithms implemented in `content.js`.
+\begin{itemize}
+    \item \textbf{Pre-checked Checkboxes:} Detected using the simple but effective CSS selector `input[type=checkbox][checked]`.
+    \item \textbf{Confirmshaming:} Detected by scanning the text content of interactive elements (buttons, links, labels) for specific regular expression patterns, such as `/no,?\\s*i (don't|do not) want/i`.
+    \item \textbf{Fake Urgency:} Detected by searching for elements with class or ID names containing "countdown" or "timer", and then checking their text content for numerical digits and time-related keywords (e.g., "minutes", "seconds").
+    \item \textbf{Visual Bias:} Detected with a heuristic that analyzes the computed CSS styles of buttons. If a button has an unusually small font size (`< 12px`) or low opacity (`< 0.5`), it is flagged as potentially manipulative.
+\end{itemize}
+
+\section{Evaluation}
+Methodology and results from testing DarkPatternHunter on a curated list of e-commerce and SaaS websites. We will report on precision, recall, and performance overhead. Our proposed methodology involves:
+\begin{enumerate}
+    \item Compiling a list of 100+ websites known to feature dark patterns.
+    \item Running the extension on each site to identify true positives (correctly identified patterns) and false positives (incorrectly flagged elements).
+    \item Manually verifying the results to calculate precision and recall rates.
+    \item Measuring the performance impact on page load times using browser developer tools.
+\end{enumerate}
+
+\section{Ethical Implications}
+Discussion on how dark patterns undermine user consent and autonomy. By manipulating cognitive biases, these designs prevent users from making informed decisions, which can have financial and privacy-related consequences. We also touch on relevant regulations like the GDPR in Europe and the CCPA in California, which explicitly prohibit deceptive design practices. Tools like DarkPatternHunter serve as a form of "counter-nudge," helping to restore the balance of power between users and service providers.
+
+\section{Conclusion}
+Summary of our contributions and future directions. DarkPatternHunter provides a practical, effective solution for identifying and neutralizing common dark patterns. Future work will focus on incorporating machine learning (e.g., NLP for more nuanced confirmshaming detection) and computer vision (for identifying visual bias in images and complex layouts) to expand the scope and accuracy of the tool.
+
+\section*{Acknowledgments}
+We thank the open-source community and privacy researchers for their foundational work.
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv, references}
+
+\end{document} 

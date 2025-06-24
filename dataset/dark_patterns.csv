@@ -1,0 +1,10 @@
+url,detected_pattern_type,html_snippet,screenshot_path,ignored_by_user
+"https://example.com/signup","Pre-checked Checkbox","<input type=""checkbox"" name=""newsletter"" checked> Yes, sign me up for the newsletter","screenshots/example_screenshot.png",false
+"https://example-store.com/checkout","Confirmshaming","<a href=""/decline"">No thanks, I don't want to save money.</a>","screenshots/confirmshaming_example.png",false
+"https://travel-deals.com/booking","Fake Urgency","<div class=""timer"">Offer ends in: 10:00</div>","screenshots/fake_urgency_example.png",false
+"https://dark-patterns.com/subscribe","Visual Bias","<button class='big-accept'>Accept All</button> <a href='/settings' style='font-size: 8px;'>Manage Settings</a>","screenshots/visual_bias_example.png",false
+"https://shop-site.com/cart","Sneak into Basket","<div>Item: T-Shirt</div> <div>Item: Donation to Charity (auto-added)</div>","screenshots/sneak_into_basket_example.png",false
+"https://ticketing-service.com/checkout","Hidden Costs","<span>Ticket Price: $50.00</span> ... <span class='fine-print'>+ $15 service fee</span>","screenshots/hidden_costs_example.png",false
+"https://subscription-box.com/account","Roach Motel","<span>To cancel your account, please call customer service at 1-800-555-1234.</span>","screenshots/roach_motel_example.png",false
+"https://social-network.com/register","Forced Action","<label><input type='checkbox' required> I agree to the terms and to receive marketing emails.</label>","screenshots/forced_action_example.png",false
+"https://fashion-outlet.com/","Confirmshaming","<button>No, I hate looking good.</button>","screenshots/confirmshaming_example_2.png",false 
